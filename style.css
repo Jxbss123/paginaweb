@@ -332,10 +332,14 @@ footer p {
     }
 
    .plan-card .btn {
-    align-self: center;
+        display: inline-block;
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+
+    .plan-card center {
     width: 100%;
-    max-width: 100%; /* Fuerza a que el botón ocupe todo el ancho de la tarjeta */
-    text-align: center;
-    box-sizing: border-box;
+    margin-top: 1rem;
     }
 }
