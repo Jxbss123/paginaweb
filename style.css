@@ -17,6 +17,7 @@ body {
     background-color: var(--light-bg);
     color: var(--primary-black);
     line-height: 1.6;
+    overflow-x: hidden; /* Evita desplazamientos horizontales no deseados en móviles */
 }
 
 /* Header */
@@ -30,11 +31,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
+    flex-wrap: wrap; /* Permite reorganizar elementos si la pantalla es angosta */
     gap: 10px;
 }
 
@@ -47,7 +44,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 15px;
 }
 
 nav ul li a {
@@ -55,6 +52,7 @@ nav ul li a {
     color: var(--primary-black);
     font-weight: 600;
     transition: color 0.3s;
+    font-size: 0.95rem;
 }
 
 nav ul li a:hover {
@@ -69,6 +67,8 @@ nav ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     transition: opacity 0.3s;
+    font-size: 0.9rem;
+    text-align: center;
 }
 
 .btn-whatsapp:hover {
@@ -80,17 +80,18 @@ nav ul li a:hover {
     background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.85)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
-    padding: 5rem 2rem;
+    padding: 4rem 1.5rem;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--accent-gold);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     max-width: 700px;
     margin: 0 auto 2rem auto;
     font-style: italic;
@@ -100,6 +101,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     gap: 15px;
+    flex-wrap: wrap; /* Para que los botones se apilen en celulares pequeños */
 }
 
 .btn {
@@ -107,6 +109,7 @@ nav ul li a:hover {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    display: inline-block;
 }
 
 .btn-primary {
@@ -122,45 +125,46 @@ nav ul li a:hover {
 /* Values Section */
 .values {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 3rem 5%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 2.5rem 5%;
     background-color: var(--white);
 }
 
 .value-card {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
     background: var(--light-bg);
     border-top: 4px solid var(--accent-gold);
 }
 
 .value-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5px;
+    font-size: 1rem;
 }
 
 /* Plans Section */
 .section-title {
     text-align: center;
-    font-size: 2rem;
-    margin: 3rem 0 1.5rem 0;
+    font-size: 1.8rem;
+    margin: 2.5rem 0 1.5rem 0;
     color: var(--primary-black);
+    padding: 0 10px;
 }
 
 .plans-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
     padding: 0 5% 3rem 5%;
+    align-items: stretch;
 }
 
 .plan-card {
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -170,7 +174,6 @@ nav ul li a:hover {
 
 .plan-card.popular {
     border: 2px solid var(--accent-gold);
-    transform: scale(1.03);
 }
 
 .popular-badge {
@@ -187,12 +190,12 @@ nav ul li a:hover {
 }
 
 .plan-card h3 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.5rem;
 }
 
 .price {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: var(--accent-gold);
     font-weight: bold;
     margin-bottom: 1.5rem;
@@ -207,11 +210,11 @@ nav ul li a:hover {
 .plan-card ul li {
     padding: 0.5rem 0;
     border-bottom: 1px solid #eee;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     color: var(--gray-text);
 }
 
-/* Services Table Section */
+/* Services Section */
 .services-section {
     padding: 2rem 5% 4rem 5%;
     background-color: var(--white);
@@ -219,7 +222,7 @@ nav ul li a:hover {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
 
@@ -228,6 +231,7 @@ nav ul li a:hover {
     color: var(--accent-gold);
     border-bottom: 2px solid var(--accent-gold);
     padding-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 .service-item {
@@ -235,12 +239,14 @@ nav ul li a:hover {
     justify-content: space-between;
     padding: 0.75rem 0;
     border-bottom: 1px solid #eee;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    gap: 10px;
 }
 
 .service-price {
     font-weight: bold;
     color: var(--primary-black);
+    white-space: nowrap;
 }
 
 /* Footer */
@@ -248,17 +254,66 @@ footer {
     background-color: var(--primary-black);
     color: var(--white);
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 2.5rem 1.5rem;
 }
 
 footer p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     color: #ccc;
+    font-size: 0.9rem;
 }
 
 .slogan-footer {
     font-style: italic;
     color: var(--accent-gold);
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+}
+
+/* ==========================================
+   REGLAS ESPECÍFICAS PARA CELULARES (RESPONSIVE)
+   ========================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.8rem 1rem;
+    }
+
+    nav ul {
+        justify-content: center;
+        margin: 5px 0;
+    }
+
+    .btn-whatsapp {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .plan-card.popular {
+        transform: none; /* Elimina el escalado excesivo que deformaba el card en celular */
+        margin-top: 10px;
+    }
+
+    .service-item {
+        font-size: 0.85rem;
+    }
 }
